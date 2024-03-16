@@ -45,15 +45,14 @@
  * */
 
 /* Output A values */
-#define MOUSE_SPEED_A_FACTOR_X 16
-#define MOUSE_SPEED_A_FACTOR_Y 16
+#define MOUSE_SPEED_A_FACTOR_X 64
+#define MOUSE_SPEED_A_FACTOR_Y 88 //88
 
 /* Output B values */
-#define MOUSE_SPEED_B_FACTOR_X 16
-#define MOUSE_SPEED_B_FACTOR_Y 16
+#define MOUSE_SPEED_B_FACTOR_X 24 // Linux
+#define MOUSE_SPEED_B_FACTOR_Y 80 // Linux
 
 #define JUMP_THRESHOLD 0
-
 
 /**================================================== *
  * ==============  Screensaver Config  ============== *

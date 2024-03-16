@@ -16,7 +16,7 @@
  */
 
 #include "main.h"
-
+#include "switch.h"
 /*********  Global Variable  **********/
 device_t global_state = {0};
 device_t *device      = &global_state;
@@ -35,6 +35,8 @@ int main(void) {
     // Initial state, A is the default output
     switch_output(device, OUTPUT_A);
 
+    init_push_swicth();
+
     while (true) {
         // USB device task, needs to run as often as possible
         tud_task();
@@ -47,13 +49,19 @@ int main(void) {
 
         // Check if there were any mouse movements and send them
         process_mouse_queue_task(device);
+
+        if (read_SW(PIN_SW)) {
+            update_mouse_speed(device);
+        }
     }
 }
 
-void core1_main() {
+void core1_main()
+{
     uart_packet_t in_packet = {0};
 
-    while (true) {
+    while (true)
+    {
         // Update the timestamp, so core0 can figure out if we're dead
         device->core1_last_loop_pass = time_us_64();
 
