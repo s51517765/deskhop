@@ -2,7 +2,7 @@
 
 ## 概要 (Overview)
 
-このプロジェクトはhttps://github.com/s51517765/deskhopのForkです。
+このプロジェクトはhttps://github.com/s51517765/deskhop のForkです。
 
 [Original README.md](README_original.md)
 
