@@ -56,12 +56,10 @@ int main(void) {
     }
 }
 
-void core1_main()
-{
+void core1_main() {
     uart_packet_t in_packet = {0};
 
-    while (true)
-    {
+    while (true) {
         // Update the timestamp, so core0 can figure out if we're dead
         device->core1_last_loop_pass = time_us_64();
 
